@@ -1,0 +1,595 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+if [ ! -d $HOME/.termux ]; then
+mkdir $HOME/.termux
+fi
+
+SHARE="/data/data/com.termux/files/usr/share"
+USR="/data/data/com.termux/files/usr"
+TDIR="/data/data/com.termux/files/home/.termux"
+CDIR="/data/data/com.termux/files/usr/share/Term-Cust/colors"
+FDIR="/data/data/com.termux/files/usr/share/Term-Cust/fonts"
+RED='\033[0;31m'           # красный цвет знаков
+GREEN='\033[0;32m'         # зелёный цвет знаков
+YELLOW='\033[0;33m'        # желтый цвет знаков
+BLUE='\033[0;34m'          # синий цвет знаков
+MAGENTA='\033[0;35m'       # фиолетовый цвет знаков
+CYAN='\033[0;36m'          # цвет морской волны знаков
+
+clear
+echo "   +-+-+-+-+-+-+-+
+   |W|e|l|c|o|m|e|
+   +-+-+-+-+-+-+-+" | lolcat
+echo "-----------------------" | lolcat
+echo "☆Created By Xlebpyshek☆"
+echo "-----------------------" | lolcat
+
+## Menu
+echo
+echo -e $B"    [$R"C"$B]$G Colors"
+echo -e $B"    [$R"F"$B]$G Fonts"
+echo -e $B"    [$R"A"$B]$G About "
+echo -e $B"    [$R"Q"$B]$G Quit"
+echo
+echo -ne $B"    [$R"Select Option"$B]$B: "
+read opt
+
+if [ $opt = "c" ] || [ $opt = "C" ];
+then
+echo
+
+#**********************************************#
+# list of color schemes
+echo -e $B"        [$G"01"$B]$Y 3024-dark                  $B[$G"11"$B]$Y atelierheath-dark"
+echo -e $B"        [$G"02"$B]$Y 3024-light                 $B[$G"12"$B]$Y atelierheath-light"
+echo -e $B"        [$G"03"$B]$Y apathy-dark                $B[$G"13"$B]$Y atelierlakeside-dark"
+echo -e $B"        [$G"04"$B]$Y apathy-light               $B[$G"14"$B]$Y atelierlakeside-light"
+echo -e $B"        [$G"05"$B]$Y ashes-dark                 $B[$G"15"$B]$Y atelierseaside-dark"
+echo -e $B"        [$G"06"$B]$Y ashes-light                $B[$G"16"$B]$Y atelierseaside-light"
+echo -e $B"        [$G"07"$B]$Y atelierdune-dark           $B[$G"17"$B]$Y bespin-dark"
+echo -e $B"        [$G"08"$B]$Y atelierdune-light          $B[$G"18"$B]$Y bespin-light"
+echo -e $B"        [$G"09"$B]$Y atelierforest-dark         $B[$G"19"$B]$Y brewer-dark"
+echo -e $B"        [$G"10"$B]$Y atelierforest-light        $B[$G"20"$B]$Y brewer-light"
+echo
+echo -ne $C"    [Choose Color Scheme You Want To Apply]: "
+read cs 
+
+if [ $cs = "1" ] || [ $cs = "01" ];
+then
+echo
+echo -e $C"    $APLC"
+cp $CDIR/base16-3024-dark.properties $TDIR/colors.properties
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $cs = "2" ] || [ $cs = "02" ];
+then
+echo
+echo -e $C"    $APLC"
+cp $CDIR/base16-3024-light.properties $TDIR/colors.properties
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $cs = "3" ] || [ $cs = "03" ];
+then
+echo
+echo -e $C"    $APLC"
+cp $CDIR/base16-apathy-dark.properties $TDIR/colors.properties
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $cs = "4" ] || [ $cs = "04" ];
+then
+echo
+echo -e $C"    $APLC"
+cp $CDIR/base16-apathy-light.properties $TDIR/colors.properties
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $cs = "5" ] || [ $cs = "05" ];
+then
+echo
+echo -e $C"    $APLC"
+cp $CDIR/base16-ashes-dark.properties $TDIR/colors.properties
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $cs = "6" ] || [ $cs = "06" ];
+then
+echo
+echo -e $C"    $APLC"
+cp $CDIR/base16-ashes-light.properties $TDIR/colors.properties
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $cs = "7" ] || [ $cs = "07" ];
+then
+echo
+echo -e $C"    $APLC"
+cp $CDIR/base16-atelierdune-dark.properties $TDIR/colors.properties
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $cs = "8" ] || [ $cs = "08" ];
+then
+echo
+echo -e $C"    $APLC"
+cp $CDIR/base16-atelierdune-light.properties $TDIR/colors.properties
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $cs = "9" ] || [ $cs = "09" ];
+then
+echo
+echo -e $C"    $APLC"
+cp $CDIR/base16-atelierforest-dark.properties $TDIR/colors.properties
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $cs = "10" ] || [ $cs = "" ];
+then
+echo
+echo -e $C"    $APLC"
+cp $CDIR/base16-atelierforest-light.properties $TDIR/colors.properties
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $cs = "11" ];
+then
+echo
+echo -e $C"    $APLC"
+cp $CDIR/base16-atelierheath-dark.properties $TDIR/colors.properties
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $cs = "12" ];
+then
+echo
+echo -e $C"    $APLC"
+cp $CDIR/base16-atelierheath-light.properties $TDIR/colors.properties
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $cs = "13" ];
+then
+echo
+echo -e $C"    $APLC"
+cp $CDIR/base16-atelierlakeside-dark.properties $TDIR/colors.properties
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $cs = "14" ];
+then
+echo
+echo -e $C"    $APLC"
+cp $CDIR/base16-atelierlakeside-light.properties $TDIR/colors.properties
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $cs = "15" ];
+then
+echo
+echo -e $C"    $APLC"
+cp $CDIR/base16-atelierseaside-dark.properties $TDIR/colors.properties
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $cs = "16" ];
+then
+echo
+echo -e $C"    $APLC"
+cp $CDIR/base16-atelierseaside-light.properties $TDIR/colors.properties
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $cs = "17" ];
+then
+echo
+echo -e $C"    $APLC"
+cp $CDIR/base16-bespin-dark.properties $TDIR/colors.properties
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $cs = "18" ];
+then
+echo
+echo -e $C"    $APLC"
+cp $CDIR/base16-bespin-light.properties $TDIR/colors.properties
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $cs = "19" ];
+then
+echo
+echo -e $C"    $APLC"
+cp $CDIR/base16-brewer-dark.properties $TDIR/colors.properties
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $cs = "20" ];
+then
+echo
+echo -e $C"    $APLC"
+cp $CDIR/base16-brewer-light.properties $TDIR/colors.properties
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+## On Wrong Input
+else
+echo
+echo -e $Y"    [!] Please Choose Valid Option..."
+echo -e $G"    [*] Returning To Main Menu..."
+sleep 1
+clear
+$SHARE/Term-Cust/Logica
+echo
+exit
+fi
+
+#************************************************#
+
+elif [ $opt = "f" ] || [ $opt = "F" ];
+then
+echo
+
+#**********************************************#
+# list of available fonts
+echo -e $B"        [$G"01"$B]$Y Anonymous-Pro         $B[$G"11"$B]$Y Inconsolata"
+echo -e $B"        [$G"02"$B]$Y Courier-Prime         $B[$G"12"$B]$Y Iosevka"
+echo -e $B"        [$G"03"$B]$Y DejaVu                $B[$G"13"$B]$Y LiberationMono"
+echo -e $B"        [$G"04"$B]$Y Fantasque             $B[$G"14"$B]$Y Meslo"
+echo -e $B"        [$G"05"$B]$Y FiraCode              $B[$G"15"$B]$Y Monofur"
+echo -e $B"        [$G"06"$B]$Y Fira                  $B[$G"16"$B]$Y Monoid"
+echo -e $B"        [$G"07"$B]$Y GNU-FreeFont          $B[$G"17"$B]$Y OpenDyslexic"
+echo -e $B"        [$G"08"$B]$Y Go-font               $B[$G"18"$B]$Y Roboto"
+echo -e $B"        [$G"09"$B]$Y Hack                  $B[$G"19"$B]$Y Source-Code-Pro"
+echo -e $B"        [$G"10"$B]$Y Hermit                $B[$G"20"$B]$Y Ubuntu"
+echo
+echo -ne $C"    [Choose Font You Want To Apply]: "
+read fs
+ 
+if [ $fs = "1" ] || [ $fs = "01" ];
+then
+echo
+echo -e $C"    $APLF"
+rm $TDIR/font.ttf
+cp $FDIR/Anonymous-Pro.ttf $TDIR/font.ttf
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $fs = "2" ] || [ $fs = "02" ];
+then
+echo
+echo -e $C"    $APLF"
+rm $TDIR/font.ttf
+cp $FDIR/Courier-Prime.ttf $TDIR/font.ttf
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $fs = "3" ] || [ $fs = "03" ];
+then
+echo
+echo -e $C"    $APLF"
+rm $TDIR/font.ttf
+cp $FDIR/DejaVu.ttf $TDIR/font.ttf
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $fs = "4" ] || [ $fs = "04" ];
+then
+echo
+echo -e $C"    $APLF"
+rm $TDIR/font.ttf
+cp $FDIR/Fantasque.ttf $TDIR/font.ttf
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $fs = "5" ] || [ $fs = "05" ];
+then
+echo
+echo -e $C"    $APLF"
+rm $TDIR/font.ttf
+cp $FDIR/FiraCode.ttf $TDIR/font.ttf
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $fs = "6" ] || [ $fs = "06" ];
+then
+echo
+echo -e $C"    $APLF"
+rm $TDIR/font.ttf
+cp $FDIR/Fira.ttf $TDIR/font.ttf
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $fs = "7" ] || [ $fs = "07" ];
+then
+echo
+echo -e $C"    $APLF"
+rm $TDIR/font.ttf
+cp $FDIR/GNU-FreeFont.ttf $TDIR/font.ttf
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $fs = "8" ] || [ $fs = "08" ];
+then
+echo
+echo -e $C"    $APLF"
+rm $TDIR/font.ttf
+cp $FDIR/Go.ttf $TDIR/font.ttf
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $fs = "9" ] || [ $fs = "09" ];
+then
+echo
+echo -e $C"    $APLF"
+rm $TDIR/font.ttf
+cp $FDIR/Hack.ttf $TDIR/font.ttf
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $fs = "10" ];
+then
+echo
+echo -e $C"    $APLF"
+rm $TDIR/font.ttf
+cp $FDIR/Hermit.ttf $TDIR/font.ttf
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $fs = "11" ];
+then
+echo
+echo -e $C"    $APLF"
+rm $TDIR/font.ttf
+cp $FDIR/Inconsolata.ttf $TDIR/font.ttf
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $fs = "12" ];
+then
+echo
+echo -e $C"    $APLF"
+rm $TDIR/font.ttf
+cp $FDIR/Iosevka.ttf $TDIR/font.ttf
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $fs = "13" ];
+then
+echo
+echo -e $C"    $APLF"
+rm $TDIR/font.ttf
+cp $FDIR/LiberationMono.ttf $TDIR/font.ttf
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $fs = "14" ];
+then
+echo
+echo -e $C"    $APLF"
+rm $TDIR/font.ttf
+cp $FDIR/Meslo.ttf $TDIR/font.ttf
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $fs = "15" ];
+then
+echo
+echo -e $C"    $APLF"
+rm $TDIR/font.ttf
+cp $FDIR/Monofur.ttf $TDIR/font.ttf
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $fs = "16" ];
+then
+echo
+echo -e $C"    $APLF"
+rm $TDIR/font.ttf
+cp $FDIR/Monoid.ttf $TDIR/font.ttf
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $fs = "17" ];
+then
+echo
+echo -e $C"    $APLF"
+rm $TDIR/font.ttf
+cp $FDIR/OpenDyslexic.ttf $TDIR/font.ttf
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $fs = "18" ];
+then
+echo
+echo -e $C"    $APLF"
+rm $TDIR/font.ttf
+cp $FDIR/Roboto.ttf $TDIR/font.ttf
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $fs = "19" ];
+then
+echo
+echo -e $C"    $APLF"
+rm $TDIR/font.ttf
+cp $FDIR/Source-Code-Pro.ttf $TDIR/font.ttf
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+elif [ $fs = "20" ];
+then
+echo
+echo -e $C"    $APLF"
+rm $TDIR/font.ttf
+cp $FDIR/Ubuntu.ttf $TDIR/font.ttf
+$REL > /dev/null
+echo -e $G"    $RES"
+echo -e $Y"    $APLD"
+echo
+exit
+
+## On Wrong Input
+else
+echo
+echo -e $Y"    [!] Please Choose Valid Option..."
+echo -e $G"    [*] Returning To Main Menu..."
+sleep 1
+clear
+$SHARE/Term-Cust/Logica
+echo
+exit
+fi
+
+#************************************************#
+
+elif [ $opt = "a" ] || [ $opt = "A" ];
+then
+echo
+echo -e $B"    ┌───────────────────────────────────────────────────────────────┐"
+echo -e $B"    └───────────────────────────────────────────────────────────────┘"
+echo
+echo -ne $C"    [*] Press 'Enter' To Return To Main Menu."
+read enter 
+$SHARE/Term-Cust/Logica
+
+#************************************************#
+
+elif [ $opt = "q" ] || [ $opt = "Q" ];
+then
+echo
+echo -e $Y"    [*] Bye Bye, Have A Nice Day!"
+sleep 1
+exit
+
+#************************************************#
+
+## Wrong Input Action
+else
+echo
+echo -e $Y"    [!] Wrong Input..."
+echo -e $G"    [*] Try Again..."
+sleep 1
+clear
+$SHARE/Term-Cust/Logica
+echo
+fi
